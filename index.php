@@ -1,3 +1,4 @@
+<script src="testing-scripts.js"></script>
 <a href="stkpush.php">Initiate Push STK</a>
 <?php
 // // MPESA API Keys
@@ -19,3 +20,7 @@
 // $result = json_decode($result);
 // echo $access_token = $result->access_token;
 // curl_close($curl); 
+
+
+?>
+<div id="feedBack"></div>
