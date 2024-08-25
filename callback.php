@@ -15,9 +15,11 @@ $ResultCode = $data->Body->stkCallback->ResultCode;
 $ResultDesc = $data->Body->stkCallback->ResultDesc;
 $Amount = $data->Body->stkCallback->CallbackMetadata->Item[0]->Value;
 $TransactionId = $data->Body->stkCallback->CallbackMetadata->Item[1]->Value;
-$UserPhoneNumber = $data->Body->stkCallback->CallbackMetadata->Item[4]->Value;
+$UserPhoneNumber = $data->Body->stkCallback->CallbackMetadata->Item[3]->Value;
 //CHECK IF THE TRASACTION WAS SUCCESSFUL 
-if ($ResultCode == 0) {
-  //STORE THE TRANSACTION DETAILS IN THE DATABASE
-  mysqli_query($db, "INSERT INTO transactions (MerchantRequestID,CheckoutRequestID,ResultCode,Amount,MpesaReceiptNumber,PhoneNumber) VALUES ('$MerchantRequestID','$CheckoutRequestID','$ResultCode','$Amount','$TransactionId','$UserPhoneNumber')");
-}
+// if ($ResultCode == 0) {
+//   //STORE THE TRANSACTION DETAILS IN THE DATABASE
+//   mysqli_query($db, "INSERT INTO transactions (MerchantRequestID,CheckoutRequestID,ResultCode,Amount,MpesaReceiptNumber,PhoneNumber) VALUES ('$MerchantRequestID','$CheckoutRequestID','$ResultCode','$Amount','$TransactionId','$UserPhoneNumber')");
+// }
+
+
