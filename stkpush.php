@@ -1,4 +1,12 @@
 <?php
+
+if( isset($_POST['submit']) && isset($_POST['paymentPhone']) && !empty($_POST['paymentPhone']) ) {
+    $paymentPhone = $_POST['paymentPhone'];
+} else {
+  header('Location: index.php');
+  exit();
+}
+
 //INCLUDE THE ACCESS TOKEN FILE
 include 'accessToken.php';
 date_default_timezone_set('Africa/Nairobi');
@@ -9,7 +17,7 @@ $BusinessShortCode = '174379';
 $Timestamp = date('YmdHis');
 // ENCRIPT  DATA TO GET PASSWORD
 $Password = base64_encode($BusinessShortCode . $passkey . $Timestamp);
-$phone = '254723653922';//phone number to receive the stk push
+$phone = $paymentPhone;//phone number to receive the stk push
 $money = '1';
 $PartyA = $phone;
 $PartyB = '174379';
